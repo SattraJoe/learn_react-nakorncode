@@ -12,6 +12,7 @@ function App() {
       <ul className="list-disc pl-5">
         <li><a href="/1-jsx" className={link}>1-jsx</a></li>
         <li><a href="/2-components" className={link}>2-components</a></li>
+        <li><a href="/3-props" className={link}>3-props</a></li>
       </ul>
     </>
   )
