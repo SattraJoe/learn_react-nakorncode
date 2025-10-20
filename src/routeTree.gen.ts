@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as R4ChildrenRouteImport } from './routes/4-children'
 import { Route as R3PropsRouteImport } from './routes/3-props'
 import { Route as R2ComponentsRouteImport } from './routes/2-components'
 import { Route as R1JsxRouteImport } from './routes/1-jsx'
 import { Route as IndexRouteImport } from './routes/index'
 
+const R4ChildrenRoute = R4ChildrenRouteImport.update({
+  id: '/4-children',
+  path: '/4-children',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const R3PropsRoute = R3PropsRouteImport.update({
   id: '/3-props',
   path: '/3-props',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/1-jsx': typeof R1JsxRoute
   '/2-components': typeof R2ComponentsRoute
   '/3-props': typeof R3PropsRoute
+  '/4-children': typeof R4ChildrenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/1-jsx': typeof R1JsxRoute
   '/2-components': typeof R2ComponentsRoute
   '/3-props': typeof R3PropsRoute
+  '/4-children': typeof R4ChildrenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/1-jsx': typeof R1JsxRoute
   '/2-components': typeof R2ComponentsRoute
   '/3-props': typeof R3PropsRoute
+  '/4-children': typeof R4ChildrenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/1-jsx' | '/2-components' | '/3-props'
+  fullPaths: '/' | '/1-jsx' | '/2-components' | '/3-props' | '/4-children'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/1-jsx' | '/2-components' | '/3-props'
-  id: '__root__' | '/' | '/1-jsx' | '/2-components' | '/3-props'
+  to: '/' | '/1-jsx' | '/2-components' | '/3-props' | '/4-children'
+  id: '__root__' | '/' | '/1-jsx' | '/2-components' | '/3-props' | '/4-children'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +76,18 @@ export interface RootRouteChildren {
   R1JsxRoute: typeof R1JsxRoute
   R2ComponentsRoute: typeof R2ComponentsRoute
   R3PropsRoute: typeof R3PropsRoute
+  R4ChildrenRoute: typeof R4ChildrenRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/4-children': {
+      id: '/4-children'
+      path: '/4-children'
+      fullPath: '/4-children'
+      preLoaderRoute: typeof R4ChildrenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/3-props': {
       id: '/3-props'
       path: '/3-props'
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   R1JsxRoute: R1JsxRoute,
   R2ComponentsRoute: R2ComponentsRoute,
   R3PropsRoute: R3PropsRoute,
+  R4ChildrenRoute: R4ChildrenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
