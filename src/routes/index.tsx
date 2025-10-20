@@ -14,6 +14,7 @@ function App() {
         <li><a href="/2-components" className={link}>2-components</a></li>
         <li><a href="/3-props" className={link}>3-props</a></li>
         <li><a href="/4-children" className={link}>4-children</a></li>
+        <li><a href="/5-conditional" className={link}>5-conditional</a></li>
       </ul>
     </>
   )
