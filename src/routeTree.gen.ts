@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as R2ComponentsRouteImport } from './routes/2-components'
 import { Route as R1JsxRouteImport } from './routes/1-jsx'
 import { Route as IndexRouteImport } from './routes/index'
 
+const R2ComponentsRoute = R2ComponentsRouteImport.update({
+  id: '/2-components',
+  path: '/2-components',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const R1JsxRoute = R1JsxRouteImport.update({
   id: '/1-jsx',
   path: '/1-jsx',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/1-jsx': typeof R1JsxRoute
+  '/2-components': typeof R2ComponentsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/1-jsx': typeof R1JsxRoute
+  '/2-components': typeof R2ComponentsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/1-jsx': typeof R1JsxRoute
+  '/2-components': typeof R2ComponentsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/1-jsx'
+  fullPaths: '/' | '/1-jsx' | '/2-components'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/1-jsx'
-  id: '__root__' | '/' | '/1-jsx'
+  to: '/' | '/1-jsx' | '/2-components'
+  id: '__root__' | '/' | '/1-jsx' | '/2-components'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R1JsxRoute: typeof R1JsxRoute
+  R2ComponentsRoute: typeof R2ComponentsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/2-components': {
+      id: '/2-components'
+      path: '/2-components'
+      fullPath: '/2-components'
+      preLoaderRoute: typeof R2ComponentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/1-jsx': {
       id: '/1-jsx'
       path: '/1-jsx'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R1JsxRoute: R1JsxRoute,
+  R2ComponentsRoute: R2ComponentsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

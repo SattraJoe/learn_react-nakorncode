@@ -12,7 +12,11 @@ function RouteComponent() {
         birthDate={new Date("2000-01-01")}
         classrooms={["A", "B", "C", "D", "E", "ZZZ"]}
       ></UserSettings>
-      <MyFooter></MyFooter>
+      <MyFooter darkTheme={false}></MyFooter>
+      <MyFooter darkTheme={false}></MyFooter>
+      <MyFooter darkTheme={true}></MyFooter>
+      <MyFooter darkTheme={false}></MyFooter>
+      <MyFooter darkTheme={true}></MyFooter>
     </>
   );
 }
@@ -78,10 +82,10 @@ export function UserSettings(props: UserSettingsProps) {
 // Expressions สามารถใช้งานได้ผ่านวงเล็บปีกกา {}
 // - หาก HTML Attribute คือ className="" หมายถึงส่งข้อมูล String เท่านั้น
 // - หาก HTML Attribute คือ className={} เราจะสามารถส่งข้อมูลประเภทใดก็ได้ตาม JavaScript Expressions
-function MyFooter() {
+function MyFooter(props: { darkTheme: boolean }) {
   const websiteName = "My Website";
   const copyrightYear = new Date().getFullYear();
-  const darkTheme = true;
+  const darkTheme = props.darkTheme;
   let footerClass = "mt-4 text-center p-2 rounded shadow bg-gray-200";
   if (darkTheme) {
     footerClass += " bg-gray-800 text-white";
@@ -89,7 +93,7 @@ function MyFooter() {
   return (
     <footer className={footerClass}>
       <p className="font-bold">
-        &copy; {copyrightYear + 543} {websiteName.toUpperCase()}
+        &copy; {(copyrightYear + 543).toString().slice(2)} {websiteName.toUpperCase()}
       </p>
     </footer>
   );
