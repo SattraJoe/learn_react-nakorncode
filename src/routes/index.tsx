@@ -16,6 +16,7 @@ function App() {
         <li><a href="/4-children" className={link}>4-children</a></li>
         <li><a href="/5-conditional" className={link}>5-conditional</a></li>
         <li><a href="/6-list" className={link}>6-list</a></li>
+        <li><a href="/7-event" className={link}>7-event</a></li>
       </ul>
     </>
   )
