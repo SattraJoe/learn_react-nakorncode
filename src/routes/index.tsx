@@ -18,6 +18,7 @@ function App() {
         <li><a href="/6-list" className={link}>6-list</a></li>
         <li><a href="/7-event" className={link}>7-event</a></li>
         <li><a href="/8-state" className={link}>8-state</a></li>
+        <li><a href="/9-snapshot" className={link}>9-snapshot</a></li>
       </ul>
     </>
   )
