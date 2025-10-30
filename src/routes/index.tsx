@@ -20,6 +20,7 @@ function App() {
         <li><a href="/8-state" className={link}>8-state</a></li>
         <li><a href="/9-snapshot" className={link}>9-snapshot</a></li>
         <li><a href="/10-reference-types" className={link}>10-reference-types</a></li>
+        <li><a href="/11-immer" className={link}>11-immer</a></li>
       </ul>
     </>
   )
