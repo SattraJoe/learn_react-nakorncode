@@ -21,6 +21,7 @@ function App() {
         <li><a href="/9-snapshot" className={link}>9-snapshot</a></li>
         <li><a href="/10-reference-types" className={link}>10-reference-types</a></li>
         <li><a href="/11-immer" className={link}>11-immer</a></li>
+        <li><a href="/12-two-way-binding" className={link}>12-two-way-binding</a></li>
       </ul>
     </>
   )
