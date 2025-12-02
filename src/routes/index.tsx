@@ -24,6 +24,7 @@ function App() {
         <li><a href="/12-two-way-binding" className={link}>12-two-way-binding</a></li>
         <li><a href="/13-event-emission" className={link}>13-event-emission</a></li>
         <li><a href="/14-preserve-reset-state" className={link}>14-preserve-reset-state</a></li>
+        <li><a href="/15-side-effect" className={link}>15-side-effect</a></li>
       </ul>
     </>
   )
