@@ -28,6 +28,7 @@ function App() {
         <li><a href="/16-impure-component" className={link}>16-impure-component</a></li>
         <li><a href="/17-re-render" className={link}>17-re-render</a></li>
         <li><a href="/18-use-effect-args" className={link}>18-use-effect-args</a></li>
+        <li><a href="/19-cleanup" className={link}>19-cleanup</a></li>
       </ul>
     </>
   )
