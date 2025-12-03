@@ -27,6 +27,7 @@ function App() {
         <li><a href="/15-side-effect" className={link}>15-side-effect</a></li>
         <li><a href="/16-impure-component" className={link}>16-impure-component</a></li>
         <li><a href="/17-re-render" className={link}>17-re-render</a></li>
+        <li><a href="/18-use-effect-args" className={link}>18-use-effect-args</a></li>
       </ul>
     </>
   )

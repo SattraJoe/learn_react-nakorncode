@@ -17,6 +17,7 @@ import { Route as R5ConditionalRouteImport } from './routes/5-conditional'
 import { Route as R4ChildrenRouteImport } from './routes/4-children'
 import { Route as R3PropsRouteImport } from './routes/3-props'
 import { Route as R2ComponentsRouteImport } from './routes/2-components'
+import { Route as R18UseEffectArgsRouteImport } from './routes/18-use-effect-args'
 import { Route as R17ReRenderRouteImport } from './routes/17-re-render'
 import { Route as R16ImpureComponentRouteImport } from './routes/16-impure-component'
 import { Route as R15SideEffectRouteImport } from './routes/15-side-effect'
@@ -66,6 +67,11 @@ const R3PropsRoute = R3PropsRouteImport.update({
 const R2ComponentsRoute = R2ComponentsRouteImport.update({
   id: '/2-components',
   path: '/2-components',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R18UseEffectArgsRoute = R18UseEffectArgsRouteImport.update({
+  id: '/18-use-effect-args',
+  path: '/18-use-effect-args',
   getParentRoute: () => rootRouteImport,
 } as any)
 const R17ReRenderRoute = R17ReRenderRouteImport.update({
@@ -130,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/15-side-effect': typeof R15SideEffectRoute
   '/16-impure-component': typeof R16ImpureComponentRoute
   '/17-re-render': typeof R17ReRenderRoute
+  '/18-use-effect-args': typeof R18UseEffectArgsRoute
   '/2-components': typeof R2ComponentsRoute
   '/3-props': typeof R3PropsRoute
   '/4-children': typeof R4ChildrenRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByTo {
   '/15-side-effect': typeof R15SideEffectRoute
   '/16-impure-component': typeof R16ImpureComponentRoute
   '/17-re-render': typeof R17ReRenderRoute
+  '/18-use-effect-args': typeof R18UseEffectArgsRoute
   '/2-components': typeof R2ComponentsRoute
   '/3-props': typeof R3PropsRoute
   '/4-children': typeof R4ChildrenRoute
@@ -171,6 +179,7 @@ export interface FileRoutesById {
   '/15-side-effect': typeof R15SideEffectRoute
   '/16-impure-component': typeof R16ImpureComponentRoute
   '/17-re-render': typeof R17ReRenderRoute
+  '/18-use-effect-args': typeof R18UseEffectArgsRoute
   '/2-components': typeof R2ComponentsRoute
   '/3-props': typeof R3PropsRoute
   '/4-children': typeof R4ChildrenRoute
@@ -193,6 +202,7 @@ export interface FileRouteTypes {
     | '/15-side-effect'
     | '/16-impure-component'
     | '/17-re-render'
+    | '/18-use-effect-args'
     | '/2-components'
     | '/3-props'
     | '/4-children'
@@ -213,6 +223,7 @@ export interface FileRouteTypes {
     | '/15-side-effect'
     | '/16-impure-component'
     | '/17-re-render'
+    | '/18-use-effect-args'
     | '/2-components'
     | '/3-props'
     | '/4-children'
@@ -233,6 +244,7 @@ export interface FileRouteTypes {
     | '/15-side-effect'
     | '/16-impure-component'
     | '/17-re-render'
+    | '/18-use-effect-args'
     | '/2-components'
     | '/3-props'
     | '/4-children'
@@ -254,6 +266,7 @@ export interface RootRouteChildren {
   R15SideEffectRoute: typeof R15SideEffectRoute
   R16ImpureComponentRoute: typeof R16ImpureComponentRoute
   R17ReRenderRoute: typeof R17ReRenderRoute
+  R18UseEffectArgsRoute: typeof R18UseEffectArgsRoute
   R2ComponentsRoute: typeof R2ComponentsRoute
   R3PropsRoute: typeof R3PropsRoute
   R4ChildrenRoute: typeof R4ChildrenRoute
@@ -320,6 +333,13 @@ declare module '@tanstack/react-router' {
       path: '/2-components'
       fullPath: '/2-components'
       preLoaderRoute: typeof R2ComponentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/18-use-effect-args': {
+      id: '/18-use-effect-args'
+      path: '/18-use-effect-args'
+      fullPath: '/18-use-effect-args'
+      preLoaderRoute: typeof R18UseEffectArgsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/17-re-render': {
@@ -406,6 +426,7 @@ const rootRouteChildren: RootRouteChildren = {
   R15SideEffectRoute: R15SideEffectRoute,
   R16ImpureComponentRoute: R16ImpureComponentRoute,
   R17ReRenderRoute: R17ReRenderRoute,
+  R18UseEffectArgsRoute: R18UseEffectArgsRoute,
   R2ComponentsRoute: R2ComponentsRoute,
   R3PropsRoute: R3PropsRoute,
   R4ChildrenRoute: R4ChildrenRoute,
