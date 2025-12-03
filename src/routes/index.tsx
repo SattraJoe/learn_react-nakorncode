@@ -26,6 +26,7 @@ function App() {
         <li><a href="/14-preserve-reset-state" className={link}>14-preserve-reset-state</a></li>
         <li><a href="/15-side-effect" className={link}>15-side-effect</a></li>
         <li><a href="/16-impure-component" className={link}>16-impure-component</a></li>
+        <li><a href="/17-re-render" className={link}>17-re-render</a></li>
       </ul>
     </>
   )
