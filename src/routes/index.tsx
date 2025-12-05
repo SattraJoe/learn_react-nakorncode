@@ -30,6 +30,7 @@ function App() {
         <li><a href="/18-use-effect-args" className={link}>18-use-effect-args</a></li>
         <li><a href="/19-cleanup" className={link}>19-cleanup</a></li>
         <li><a href="/20-group-state" className={link}>20-group-state</a></li>
+        <li><a href="/21-contradictions" className={link}>21-contradictions</a></li>
       </ul>
     </>
   )
