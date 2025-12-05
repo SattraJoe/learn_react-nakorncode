@@ -32,6 +32,7 @@ function App() {
         <li><a href="/20-group-state" className={link}>20-group-state</a></li>
         <li><a href="/21-contradictions" className={link}>21-contradictions</a></li>
         <li><a href="/22-redundant" className={link}>22-redundant</a></li>
+        <li><a href="/23-duplication" className={link}>23-duplication</a></li>
       </ul>
     </>
   )
