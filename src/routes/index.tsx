@@ -34,6 +34,7 @@ function App() {
         <li><a href="/22-redundant" className={link}>22-redundant</a></li>
         <li><a href="/23-duplication" className={link}>23-duplication</a></li>
         <li><a href="/24-reducer" className={link}>24-reducer</a></li>
+        <li><a href="/25-use-memo" className={link}>25-use-memo</a></li>
       </ul>
     </>
   )
