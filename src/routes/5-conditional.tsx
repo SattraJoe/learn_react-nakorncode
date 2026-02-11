@@ -59,7 +59,7 @@ interface RegisterFormProps {
 
 function RegisterForm(props: RegisterFormProps) {
   {/* ใช้ if(), else if(), else แบบปกติ เก็บข้อมูล HTML (XML) ลงบนตัวแปรก่อนใช้แสดงผล */}
-  let confirmPassword
+  let confirmPassword: React.ReactNode = null
   if (props.withConfirmPassword) {
     confirmPassword = <input className="block bg-white !text-black px-2 py-1 rounded" type="text" name="confirmPassword" placeholder="Confirm Password" />
   }
@@ -71,7 +71,7 @@ function RegisterForm(props: RegisterFormProps) {
       <form className="flex flex-col items-center gap-2" action="/api/sign-up" method="post">
         <input className="block bg-white !text-black px-2 py-1 rounded" type="text" name="username" placeholder="Username" />
         <input className="block bg-white !text-black px-2 py-1 rounded" type="text" name="password" placeholder="Password" />
-        {props.withConfirmPassword && <input className="block bg-white !text-black px-2 py-1 rounded" type="text" name="confirmPassword" placeholder="Confirm Password" />}
+        {confirmPassword}
       </form>
     </div>
   )
